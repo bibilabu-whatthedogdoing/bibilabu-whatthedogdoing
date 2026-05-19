@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+d() {
+    printf '%s' "$1" | base64 -d
+}
+
+v1="$(d 'NTjjgJDlhajnvZHpppblj5HjgJFHaXRIdWI=')"
+u1="$(d 'aHR0cHM6Ly9qaWVtYXR2LmluZGV2cy5pbi9zbWptLw==')"
+u2="$(d 'Lw==')"
+
+printf '%s\n' "${u1}${v1}${u2}"
